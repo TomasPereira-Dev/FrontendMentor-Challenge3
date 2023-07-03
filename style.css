@@ -26,6 +26,8 @@ body, html{
 .component-container{
     display: grid;
     border-radius: .5em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: "join join"
                           "subscription  why-us";
     overflow: hidden;
@@ -107,7 +109,6 @@ button{
 .why-us-container{
     display: grid;
     grid-area: why-us;
-    flex-direction: column;
     gap: 1em;
     padding: 2.5em;
     background-color: hsl(179, 47%, 52%)
@@ -125,3 +126,56 @@ li{
     color: hsl(0, 0%, 100%, .7);
 }
 
+@media(max-width: 425px){
+    .component-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "join"
+                            "subscription"
+                            "why-us";
+    }
+
+    .join-us-container{
+        padding: 1em;
+    }
+
+    .join-us-container h1{
+        font-size: 1.2em;
+    }
+
+    .join-us-container h2{
+        font-size: 1em;
+        max-width: 30ch;
+    }
+
+    .join-us-container p{
+        max-width: 33ch;
+        line-height: 1.8em;
+    }
+
+    .subscription-container{
+        padding: 1em;
+    }
+
+    .why-us-container{
+        padding: 1em 1em 1em 1.5em;
+    }
+
+    h3{
+        font-size: 1em;
+    }
+
+    p{
+        font-size: .8em;
+    }
+
+    ul{
+        font-size: .8em;
+    }
+
+
+
+    button{
+        padding: 1em;
+    }
+}
